@@ -1,3 +1,5 @@
+
+<div ng-include src="navigator1.html"></div>
 <ons-page class="center">
 <!--    <ons-navigator-toolbar title="Page1"  right-button-icon="fa fa-lg fa-angle-right"
                            on-right-button-click="ons.navigator.pushPage('page2.html')">
@@ -35,6 +37,14 @@
     <ons-col>Dénivelé</ons-col>
     <ons-col>0 m</ons-col>
 </ons-row>
+<ons-select ng-model="selectActivie">    
+            <option value="escalade">escalade</option>
+            <option value="alpinisme">alpinisme</option>
+</ons-select>
+</br>
+<div class="fa fa-play-circle-o fa-4x"></div>
+</br>
+<div class="fa fa-pause fa-4x"></div>
     <ons-bottom-toolbar>
             Enregistrer      
     </ons-bottom-toolbar>

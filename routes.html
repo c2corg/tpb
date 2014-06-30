@@ -6,7 +6,7 @@
   </div>
   <div class="topcoat-button-bar__item">
       <input type="radio" name="segment-a">
-    <button class="topcoat-button-bar__button">Statistiques</button>
+    <button ng-click="ons.navigator.resetToPage('navigator1.html')" class="topcoat-button-bar__button">Statistiques</button>
   </div>
   <div class="topcoat-button-bar__item">
     <input type="radio" name="segment-a">
@@ -25,9 +25,12 @@
     <li><div class="fa fa-minus-circle"></div>Mt. Chauve - Face W</li>
     <li><div class="fa fa-minus-circle"></div>Mt. Chauve - Face E</li>
 </ul>
-    <p>Référentiel "Liste de recherche" + Bouton reload</p>
-
-<p>Recherche</p>
+    <p>Référentiel</p>
+<ons-select ng-model="selectParking">    
+            <option value="parking">Parking</option>
+            <option value="summit">Sommet</option>
+</ons-select>
+<p>Rechercher</p>
 <input type="search" value="" placeholder="Rechercher" class="topcoat-search-input">
 
 </ons-page>
