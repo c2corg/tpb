@@ -1,0 +1,68 @@
+<h1 class="fa">GPS</h1>
+<ons-row>
+    <ons-col>
+        <div>Fréquence GPS</div>
+    </ons-col>
+    <ons-col>
+        <ons-select ng-model="selectFreqGPS">    
+            <option value="5">5s</option>
+            <option value="10">10s</option>
+            <option value="15">15s</option>
+            <option value="20">20s</option>
+            <option value="25">25s</option>
+        </ons-select>
+    </ons-col>
+</ons-row>
+<p></p>
+<ons-row>
+    <ons-col>
+        <div>Distance points</div>
+    </ons-col>
+    <ons-col>
+        <ons-select ng-model="selectDistGPS">    
+            <option value="5">5m</option>
+            <option value="10">10m</option>
+            <option value="15">15m</option>
+        </ons-select>
+    </ons-col>
+</ons-row>
+
+<h1 class="fa">Batterie</h1>
+<ons-row>
+    <ons-col>
+        <div>Fréquence GPS</div>
+    </ons-col>
+    <ons-col>
+        <ons-select ng-model="selectSeuilBatterie">    
+            <option value="5">5%</option>
+            <option value="10">10%</option>
+            <option value="15">15%</option>
+        </ons-select>
+    </ons-col>
+</ons-row>
+<ons-row>
+    <h1 class="fa">Compte C2C</h1></ons-row>
+
+<ons-row>
+    <ons-col>
+        <p>username</p>
+    </ons-col>
+    <ons-col>
+        <ons-text-input 
+            ng-model="username"
+            placeholder="Username" 
+            style="display: block; width: 90%">
+        </ons-text-input>
+    </ons-col>
+</ons-row>
+<p></p>
+<ons-row>
+    <ons-col><p>password</p></ons-col>
+    <ons-col>
+        <ons-text-input 
+            ng-model="password"
+            placeholder="Password" 
+            style="display: block; width: 90%">
+        </ons-text-input>
+    </ons-col>
+</ons-row>

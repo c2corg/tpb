@@ -1,0 +1,41 @@
+<ons-page class="center">
+<!--    <ons-navigator-toolbar title="Page1"  right-button-icon="fa fa-lg fa-angle-right"
+                           on-right-button-click="ons.navigator.pushPage('page2.html')">
+    </ons-navigator-toolbar>
+-->
+<div class="topcoat-button-bar" style="width:380px;margin:0 auto;">
+  <div class="topcoat-button-bar__item">
+    <input type="radio" name="segment-a">
+    <button ng-click="ons.navigator.getPages('routes.html')" class="topcoat-button-bar__button">Routes</button>
+  </div>
+  <div class="topcoat-button-bar__item">
+      <input type="radio" name="segment-a" checked>
+    <button class="topcoat-button-bar__button">Statistiques</button>
+  </div>
+  <div class="topcoat-button-bar__item">
+    <input type="radio" name="segment-a">
+    <button class="topcoat-button-bar__button">Carte</button>
+  </div>
+</div>
+ <a href ng-click="goCats = !goCats" class="btn btn-primary btn-lg">Toggle Cats</a>
+</div>
+<img ng-src="http://i.imgur.com/vkW3Lhe.jpg" ng-show="goCats">
+<div ng-show="!hello">this is a goodbye message</div>
+<div ng-show="hello">this is a welcome message</div>
+
+
+<h1>00:00:00</h1>
+<p>Temps</p>
+
+<ons-row>
+    <ons-col>Distance</ons-col>
+    <ons-col><b>00.0 km</b></ons-col>
+</ons-row>
+<ons-row>
+    <ons-col>Dénivelé</ons-col>
+    <ons-col>0 m</ons-col>
+</ons-row>
+    <ons-bottom-toolbar>
+            Enregistrer      
+    </ons-bottom-toolbar>
+</ons-page>
