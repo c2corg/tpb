@@ -12,3 +12,15 @@ myApp.controller('mainController', function($scope) {
 
   $scope.goCats = false;
   });
+  
+myApp.controller('settings', function ($scope){
+    
+});
+
+myApp.controller('sortie', function($scope){
+    
+});
+    
+myApp.controller('MorningCtrl', function($scope){
+   $scope.greeting = "Good Morning!"; 
+});

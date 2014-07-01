@@ -1,6 +1,7 @@
 
-<div ng-include src="navigator1.html"></div>
+
 <ons-page class="center">
+    <div ng-include src="navigator1.html"></div>
 <!--    <ons-navigator-toolbar title="Page1"  right-button-icon="fa fa-lg fa-angle-right"
                            on-right-button-click="ons.navigator.pushPage('page2.html')">
     </ons-navigator-toolbar>
@@ -19,14 +20,37 @@
     <button class="topcoat-button-bar__button">Carte</button>
   </div>
 </div>
+<div>
  <a href ng-click="goCats = !goCats" class="btn btn-primary btn-lg">Toggle Cats</a>
 </div>
 <img ng-src="http://i.imgur.com/vkW3Lhe.jpg" ng-show="goCats">
-<div ng-show="!hello">this is a goodbye message</div>
-<div ng-show="hello">this is a welcome message</div>
+<script>
+    var myApp= angular.module('Onsen', []);
+    Onsen.controller('MorningCtrl', function($scope){
+        $scope.greeting = "Good Morning!";
+      });
 
+      Onsen.controller('DayCtrl', function($scope){
+        $scope.greeting = "Good Day!";
+      });      
 
+      Onsen.controller('NightCtrl', function($scope){
+        $scope.greeting = "Good Night!";
+      });
+</script>
+<div ng-controller="MorningCtrl">
+      <h2>{{greeting}}</h2>
+    </div>
+
+    <div ng-controller="DayCtrl">
+      <h2>{{greeting}}</h2>
+    </div>
+
+    <div ng-controller="NightCtrl">
+      <h2>{{greeting}}</h2>
+    </div>
 <h1>00:00:00</h1>
+
 <p>Temps</p>
 
 <ons-row>
@@ -42,9 +66,9 @@
             <option value="alpinisme">alpinisme</option>
 </ons-select>
 </br>
-<div class="fa fa-play-circle-o fa-4x"></div>
+<div class="fa fa-play-circle-o fa-4x" ng-click="play = !play" ng-show="play"></div>
 </br>
-<div class="fa fa-pause fa-4x"></div>
+<div class="fa fa-pause fa-4x" ng-click="pause = !pause" ng-show="pause"></div>
     <ons-bottom-toolbar>
             Enregistrer      
     </ons-bottom-toolbar>
