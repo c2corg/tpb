@@ -20,38 +20,31 @@
     <button class="topcoat-button-bar__button">Carte</button>
   </div>
 </div>
+<!--
 <div>
  <a href ng-click="goCats = !goCats" class="btn btn-primary btn-lg">Toggle Cats</a>
 </div>
+-->
 <img ng-src="http://i.imgur.com/vkW3Lhe.jpg" ng-show="goCats">
-<script>
-    var myApp= angular.module('Onsen', []);
-    Onsen.controller('MorningCtrl', function($scope){
-        $scope.greeting = "Good Morning!";
-      });
 
-      Onsen.controller('DayCtrl', function($scope){
-        $scope.greeting = "Good Day!";
-      });      
-
-      Onsen.controller('NightCtrl', function($scope){
-        $scope.greeting = "Good Night!";
-      });
-</script>
-<div ng-controller="MorningCtrl">
-      <h2>{{greeting}}</h2>
-    </div>
-
-    <div ng-controller="DayCtrl">
-      <h2>{{greeting}}</h2>
-    </div>
-
-    <div ng-controller="NightCtrl">
-      <h2>{{greeting}}</h2>
-    </div>
 <h1>00:00:00</h1>
 
 <p>Temps</p>
+
+<div ng-controller="SearchList">
+
+        Name: 
+        <br/>
+        <input type="text" ng-model="name" /> 
+        <br/>
+        <ul>
+            <li ng-repeat="coworker in coworkers | filter:name">{{ coworker.name }} - {{ coworker.city }}</li>
+        </ul>
+
+        <p>You are searching for <em>{{ name }}</em></p>
+
+
+</div>
 
 <ons-row>
     <ons-col>Distance</ons-col>
