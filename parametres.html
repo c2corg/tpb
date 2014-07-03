@@ -1,10 +1,12 @@
+<ons-page ng-controller="settingsCtrl">
 <h1 class="fa">GPS</h1>
+
 <ons-row>
     <ons-col>
         <div>Fréquence GPS</div>
     </ons-col>
     <ons-col>
-        <ons-select ng-model="selectFreqGPS">    
+        <ons-select ng-model="settings.freqGPS">    
             <option value="5">5s</option>
             <option value="10">10s</option>
             <option value="15">15s</option>
@@ -19,7 +21,7 @@
         <div>Distance points</div>
     </ons-col>
     <ons-col>
-        <ons-select ng-model="selectDistGPS">    
+        <ons-select ng-model="settings.GPSDistance">    
             <option value="5">5m</option>
             <option value="10">10m</option>
             <option value="15">15m</option>
@@ -33,7 +35,7 @@
         <div>Fréquence GPS</div>
     </ons-col>
     <ons-col>
-        <ons-select ng-model="selectSeuilBatterie">    
+        <ons-select ng-model="settings.battery">    
             <option value="5">5%</option>
             <option value="10">10%</option>
             <option value="15">15%</option>
@@ -49,7 +51,7 @@
     </ons-col>
     <ons-col>
         <ons-text-input 
-            ng-model="username"
+            ng-model="settings.username"
             placeholder="Username" 
             style="display: block; width: 90%">
         </ons-text-input>
@@ -59,10 +61,20 @@
 <ons-row>
     <ons-col><p>password</p></ons-col>
     <ons-col>
-        <ons-text-input 
-            ng-model="password"
+        <ons-text-input
+            type="password"
+            ng-model="settings.password"
             placeholder="Password" 
             style="display: block; width: 90%">
         </ons-text-input>
     </ons-col>
+
 </ons-row>
+<div>
+    {{settings.freqGPS}}</br>
+    {{settings.GPSDistance}}</br>
+    {{settings.battery}}</br>
+    {{settings.username}}</br>
+    {{settings.password}}</br>
+</div>
+</ons-page>
