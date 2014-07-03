@@ -1,1 +1,1 @@
-var myApp = angular.module('myApp', ['onsen.directives']);
+var myApp = angular.module('myApp', ['onsen.directives', 'angular-chrono']);

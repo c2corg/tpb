@@ -27,40 +27,48 @@
 
 
 
-var controllers = {};
+//var controllers = {};
+//
+//controllers.SearchList = function ($scope){
+//
+//    $scope.coworkers = [
+//            {name: 'Joe Bob', city: 'Ukrainia'},
+//            {name: 'Adam Blobnovski', city: 'Logan' },
+//            {name: 'Carlos Sanchez', city: 'Deerbushle'},   
+//            {name: 'Martin Kellerweller', city: 'Uptown'},
+//            {name: 'John Doe',  city: 'New York City'}
+//        ];
+//};
+//
+//
+//
+//myApp.controller(controllers);
 
-controllers.SearchList = function ($scope){
-
-    $scope.coworkers = [
-            {name: 'Joe Bob', city: 'Ukrainia'},
-            {name: 'Adam Blobnovski', city: 'Logan' },
-            {name: 'Carlos Sanchez', city: 'Deerbushle'},   
-            {name: 'Martin Kellerweller', city: 'Uptown'},
-            {name: 'John Doe',  city: 'New York City'}
-        ];
-};
 
 
-
-myApp.controller(controllers);
 
 /**
- * Contrôleur du login
+ * Permet le controle du timer
  */
-function validerUser($scope, User){
-    var login = 'illianor';
-    var password = '';
-};
-
-//function watchSuccess(position) {
-//    var element = document.getElementById('geolocation');
-//    element.innerHTML = 'Latitude: ' + position.coords.latitude + '<br />' +
-//            'Longitude: ' + position.coords.longitude + '<br />' +
-//            'Altitude: ' + position.coords.altitude + '<br />' +
-//            'Accuracy: ' + position.coords.accuracy + '<br />' +
-//            'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '<br />' +
-//            'Heading: ' + position.coords.heading + '<br />' +
-//            'Speed: ' + position.coords.speed + '<br />' +
-//            'Timestamp: ' + position.timestamp + '<br />' +
-//            '<hr />' + element.innerHTML;
-//}
+myApp.controller('timerCtrl', function MyCtrl($scope, chronoService) {
+        $scope.showStart = true;
+        $scope.showEnregistrer = false;
+        $scope.pauseTime = null;
+        
+        $scope.start = function (){
+            $scope.showEnregistrer = true;
+            $scope.showStart = false;
+            if (null != $scope.time){
+                $scope.time = $scope.time + (Date.now()-$scope.pauseTime);
+            }else{
+                $scope.time = Date.now();
+            }
+            chronoService.start();
+        };
+        $scope.pause = function(){
+            $scope.showStart = !$scope.showStart;
+            $scope.pauseTime = Date.now();
+            chronoService.stop();
+        };
+        chronoService.addTimer('myTimer', { interval: 500 });
+});

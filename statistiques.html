@@ -26,7 +26,10 @@
 
 <img ng-src="http://i.imgur.com/vkW3Lhe.jpg" ng-show="goCats">
 -->
-<h1>00:00:00</h1>
+<div ng-controller="timerCtrl">
+<div chrono-timer timer-name="myTimer" start-time="time">
+    <h1>{{ hours }}:{{ minutes|zeropad }}:{{ seconds|zeropad }}</h1>
+</div>
 
 <p>Temps</p>
 
@@ -59,10 +62,11 @@
             <option value="alpinisme">alpinisme</option>
 </ons-select>
 </br>
-<div class="fa fa-play-circle-o fa-4x"></div>
+<div ng-click="start()" class="fa fa-play-circle-o fa-4x" ng-show="showStart"></div>
 </br>
-<div class="fa fa-pause fa-4x"></div>
-    <ons-bottom-toolbar>
+<div ng-click="pause()" class="fa fa-pause fa-4x" ng-show="!showStart"></div>
+    <ons-bottom-toolbar ng-show="showEnregistrer">
         Enregistrer
     </ons-bottom-toolbar>
+</div>
 </ons-page>
