@@ -1,7 +1,6 @@
 
-
 <ons-page class="center">
-    <div ng-include src="navigator1.html"></div>
+    
 <!--    <ons-navigator-toolbar title="Page1"  right-button-icon="fa fa-lg fa-angle-right"
                            on-right-button-click="ons.navigator.pushPage('page2.html')">
     </ons-navigator-toolbar>
@@ -24,13 +23,14 @@
 <div>
  <a href ng-click="goCats = !goCats" class="btn btn-primary btn-lg">Toggle Cats</a>
 </div>
--->
-<img ng-src="http://i.imgur.com/vkW3Lhe.jpg" ng-show="goCats">
 
+<img ng-src="http://i.imgur.com/vkW3Lhe.jpg" ng-show="goCats">
+-->
 <h1>00:00:00</h1>
 
 <p>Temps</p>
 
+<!--
 <div ng-controller="SearchList">
 
         Name: 
@@ -45,7 +45,7 @@
 
 
 </div>
-
+-->
 <ons-row>
     <ons-col>Distance</ons-col>
     <ons-col><b>00.0 km</b></ons-col>
@@ -59,10 +59,10 @@
             <option value="alpinisme">alpinisme</option>
 </ons-select>
 </br>
-<div class="fa fa-play-circle-o fa-4x" ng-click="play = !play" ng-show="play"></div>
+<div class="fa fa-play-circle-o fa-4x"></div>
 </br>
-<div class="fa fa-pause fa-4x" ng-click="pause = !pause" ng-show="pause"></div>
+<div class="fa fa-pause fa-4x"></div>
     <ons-bottom-toolbar>
-            Enregistrer      
+        Enregistrer
     </ons-bottom-toolbar>
 </ons-page>
