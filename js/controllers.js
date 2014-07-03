@@ -92,3 +92,34 @@ myApp.controller('timerCtrl', function MyCtrl($scope, chronoService, $rootScope)
     };
     chronoService.addTimer('myTimer', {interval: 500});
 });
+
+
+/*****    SETTINGS    *****/
+
+myApp.controller('settingsCtrl', function settingsCtrl($scope){
+    $scope.settings = {
+        freqGPS: 10,
+        GPSDistance: 10,
+        battery: 10,
+        username: 'illianor',
+        password: 'toto'
+    }
+});
+
+
+/*****     GEOLOCATION     *****/
+myApp.controller('ng-cordova', function($scope, $cordovaGeolocation) {
+  $cordovaGeolocation.getCurrentPosition().then(function(position) {
+      // Position here: position.coords.latitude, position.coords.longitude
+    }, function(err) {
+      // error
+    });
+
+  $cordovaGeolocation.watchPosition().then(function() {
+      // Not currently used
+    }, function(err) {
+      // An error occured. Show a message to the user
+    }, function(position) {
+      // Active updates of the position here
+  });
+});
