@@ -50,25 +50,45 @@
 /**
  * Permet le controle du timer
  */
-myApp.controller('timerCtrl', function MyCtrl($scope, chronoService) {
-        $scope.showStart = true;
-        $scope.showEnregistrer = false;
-        $scope.pauseTime = null;
+
+
+myApp.controller('timerCtrl', function MyCtrl($scope, chronoService, $rootScope) {
+
+    $scope.showStart = $rootScope.showStart;
+    $scope.showEnregistrer = $rootScope.showEnregistrer;
+    $scope.pauseTime = null;
+    
+    $scope.start = function() {
+        if(null != $rootScope.pauseTimer){
+            $scope.pauseTime = $rootScope.pauseTimer;
+        }
+        if(null != $rootScope.startTimer){
+            $scope.time = $rootScope.startTimer;
+        }
         
-        $scope.start = function (){
-            $scope.showEnregistrer = true;
-            $scope.showStart = false;
-            if (null != $scope.time){
-                $scope.time = $scope.time + (Date.now()-$scope.pauseTime);
-            }else{
-                $scope.time = Date.now();
-            }
-            chronoService.start();
-        };
-        $scope.pause = function(){
-            $scope.showStart = !$scope.showStart;
-            $scope.pauseTime = Date.now();
-            chronoService.stop();
-        };
-        chronoService.addTimer('myTimer', { interval: 500 });
+        $scope.showEnregistrer = true;
+        $scope.showStart = false;
+        
+        // Update du status dans le rootscope
+        $rootScope.showEnregistrer =$scope.showEnregistrer;
+        $rootScope.showStart = $scope.showStart;
+        
+        if (null != $scope.time) {
+            $scope.time = $scope.time + (Date.now() - $scope.pauseTime);
+        } else {
+            $scope.time = Date.now();
+        }
+        
+        chronoService.start();
+        $rootScope.startTimer = $scope.time;
+    };
+    $scope.pause = function() {
+        $scope.showStart = !$scope.showStart;
+        $rootScope.showStart = $scope.showStart;
+        $scope.pauseTime = Date.now();
+        chronoService.stop();
+        
+        $rootScope.pauseTimer = $scope.pauseTime;
+    };
+    chronoService.addTimer('myTimer', {interval: 500});
 });
