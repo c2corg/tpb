@@ -108,7 +108,7 @@ myApp.controller('settingsCtrl', function settingsCtrl($scope){
 
 
 /*****     GEOLOCATION     *****/
-myApp.controller('ng-cordova', function($scope, $cordovaGeolocation) {
+myApp.controller('gelocation', function($scope, $cordovaGeolocation) {
   $cordovaGeolocation.getCurrentPosition().then(function(position) {
       // Position here: position.coords.latitude, position.coords.longitude
     }, function(err) {
@@ -120,6 +120,21 @@ myApp.controller('ng-cordova', function($scope, $cordovaGeolocation) {
     }, function(err) {
       // An error occured. Show a message to the user
     }, function(position) {
-      // Active updates of the position here
+      $scope.latitude = position.coords.latitude;
+      $scope.longitude = position.coords.longitude;
   });
+  
+    $scope.getLatLng = function() {
+        if(!$scope.lat && !$scope.lng) { return '-45.787, -89.052'; }
+        return $scope.lat.toFixed(3) + ', ' + $scope.lng.toFixed(3);
+    }
+    
+    $scope.toggleTrack = function() {
+        $cordovaGeolocation.watchPosition().then(function(resp) {
+        }, function(err) {
+        }, function(position) {
+            $scope.latitude = position.coords.latitude;
+            $scope.longitude = position.coords.longitude;
+        });
+    };
 });
