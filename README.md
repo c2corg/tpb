@@ -4,7 +4,7 @@ Ceci est une application web qui permet d'ajouter de nouvelles sorties au site i
 Le code présent est par la suite transformé en application native à l'aide de Cordova.
 
 ## Ressources utilisées
-https://github.com/rfink/angular-chrono
-http://ngcordova.com/
-http://onsenui.io/
-http://cordova.apache.org/
+https://github.com/rfink/angular-chrono  
+http://ngcordova.com/  
+http://onsenui.io/  
+http://cordova.apache.org/  
