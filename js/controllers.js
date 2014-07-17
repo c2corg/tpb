@@ -78,8 +78,12 @@ myApp.controller('settingsCtrl', function settingsCtrl($scope, $http) {
     
     $scope.debug = "debugButton";
     
+    /**
+     * Permet d'aller rechercher des données sur un autre domaine
+     */
     $http.defaults.useXDomain = true;
     
+    // Envoi des données de login
     $scope.onLogin = function(){
         
         $scope.debug = "functionLogin";
