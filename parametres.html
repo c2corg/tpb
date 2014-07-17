@@ -1,4 +1,5 @@
 <ons-page ng-controller="settingsCtrl">
+    <ons-scroller>
 <h1 class="fa">GPS</h1>
 
 <ons-row>
@@ -77,4 +78,14 @@
     {{settings.username}}</br>
     {{settings.password}}</br>
 </div>
+<div>
+    <ons-button ng-click="onLogin()">
+    Send Login
+    </ons-button>
+    <p>{{data}}</p>
+    <p>{{status}}</p>
+    <p>{{debug}}</p>
+    <p>{{headers}}</p>
+</div>
+</ons-scroller>
 </ons-page>

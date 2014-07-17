@@ -3,11 +3,32 @@
     <!-- <h1>Carte</h1>
 
 <img src="./images/mapExample.jpg" /> -->
-    <p>un P</p>
-    <div ng-controller="geolocation">
+
+
+    <p>Page qui affiche les coordonnées GPS</p>
+    <div ng-controller="GeolocationCtrl">
         <button ng-click="toggleTrack()">Toggle Track</button>
         
+        
         <div ng-bind="getLatLng()"></div>
+        <ul ng-repeat="pointTrace in trace">
+            <li>{{pointTrace.latitude}} - {{pointTrace.longitude}} - {{pointTrace.altitude}}</li>
+        </ul>
+        <p>{{trace}}</p>
     </div>
-    <p>un autre P</p>
+ 
+ <!--
+ <div ng-controller="geoLoc">
+       <b>My geolocation:</b> <br />
+  Latitude: {{position.coords.latitude}} <br />
+  Longitude: {{position.coords.longitude}} <br />
+  Altitude: {{position.coords.altitude}} <br />
+  Accuracy: {{position.coords.accuracy}} <br />
+  Altitude Accuracy: {{position.coords.altitudeAccuracy}} <br />
+  Heading: {{position.coords.heading}} <br />
+  Speed: {{position.coords.speed}} <br />
+  Timestamp: {{position.timestamp}} <br />
+ </div>
+ -->
+
 </ons-page>
