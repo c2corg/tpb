@@ -90,7 +90,7 @@ myApp.controller('settingsCtrl', function settingsCtrl($scope, $http) {
             ,
             data: {
                 login_name: 'illianor',
-                password: 'aaIWFCxG'
+                password: ''
             }
         }).success(function(data, status, headers, config, scope){
             $scope.debug= "success";
